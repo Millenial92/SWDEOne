@@ -12,17 +12,15 @@ public class CourseController {
 
 @Autowired
     private CourseService courseService;
-//@RequestMapping("/topics")
-//@RequestMapping("/topics", method = RequestMethod.GET)
     @GetMapping("/topics/{id}/courses")
-    public List<Course> getAllCourses(@PathVariable String id) {
-        return courseService.getAllCourses(id);
+    public List<Course> getAllCourses(@PathVariable String topicId) {
+        return courseService.getAllCourses(topicId);
 }
 
     @RequestMapping("/topics/{topicId}/courses/{id}")
-    public Optional<Course> getCourse(@PathVariable String id){
+    public Optional<Optional<Course>> getCourse(@PathVariable String topicId){
 
-        return courseService.getCourse(id);
+        return Optional.ofNullable(courseService.getCourse(topicId));
 }
 
     @PostMapping("/topics/{topicId}/courses")
