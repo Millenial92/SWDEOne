@@ -1,4 +1,4 @@
-package com.example.SpringWithDatabaseExample;
+package com.millenial92.spring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

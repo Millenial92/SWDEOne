@@ -1,24 +1,29 @@
-package com.example.SpringWithDatabaseExample.Topic;
+package com.millenial92.spring.course;
 
+import com.millenial92.spring.topic.Topic;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
-public class Topic {
+public class Course {
 
     @Id
     private String id;
     private String name;
     private String description;
+    @ManyToOne
+    private Topic topic;
 
-
-    public Topic() {
+    public Course() {
 
     }
-    public Topic(String id, String name, String description) {
+
+    public Course(String id, String name, String description , String topicId) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.topic = new Topic(topicId, "", "");
     }
 
     public String getId() {
@@ -43,5 +48,13 @@ public class Topic {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Topic getTopic() {
+        return topic;
+    }
+
+    public void setTopic(Topic topic) {
+        this.topic = topic;
     }
 }

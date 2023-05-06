@@ -1,4 +1,4 @@
-package com.example.SpringWithDatabaseExample.Topic;
+package com.millenial92.spring.topic;
 
 import org.springframework.data.repository.CrudRepository;
 
